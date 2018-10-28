@@ -1,0 +1,16 @@
+---
+- name: Run a CouchBase container.
+  docker_container:
+    image: couchbase:community-5.1.1
+    name: cb_db
+    state: started
+    ports: "8091:8091"
+
+- name: Run an Elastic container.
+  docker_container:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+    name: elastic
+    state: started
+    ports: "9200:9200"
+    env:
+      discovery.type: single-node

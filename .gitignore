@@ -1,0 +1,4 @@
+.idea/
+*.log
+playbook.retry
+.vagrant/
