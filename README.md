@@ -13,7 +13,8 @@ Following softwares must be up & running on the host machine as a pre-requisite:
 3. pip & certain libraries
 4. CouchBase (as a Docker container)
 5. Elastic server (as a Docker container)
-6. Zk-Kafka single node setup (TODO)
+6. Java 8 (JDK)
+7. Zk-Kafka single node setup (TODO)
 
 #### Steps:
 1. From the project's root directory, execute 

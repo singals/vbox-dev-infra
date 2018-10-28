@@ -23,3 +23,18 @@
 - name: Install Docker Python library.
   pip: name=docker state=present
   become: yes
+
+- name: Add Oracle java repository
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: Update apt
+  apt: update_cache=yes
+
+- name: Accept license terms
+  debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+
+- name: Install Java
+  apt:
+    name: ['oracle-java8-installer', 'ca-certificates', 'oracle-java8-set-default']
+    state: latest
+    update_cache: yes
