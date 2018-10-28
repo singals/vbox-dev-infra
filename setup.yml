@@ -38,3 +38,9 @@
     name: ['oracle-java8-installer', 'ca-certificates', 'oracle-java8-set-default']
     state: latest
     update_cache: yes
+
+- name: Download kafka
+  unarchive:
+    src: http://mirrors.estointernet.in/apache/kafka/2.0.0/kafka_2.11-2.0.0.tgz
+    dest: /opt/
+    remote_src: yes
