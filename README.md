@@ -4,8 +4,6 @@
 Following softwares must be up & running on the host machine as a pre-requisite:
 1. Vagrant
 2. VirtualBox
-3. Ansible
-4. Python (> v 3.x) & pip
 
 ####Softwares installed on Guest OS
 1. Ansible
