@@ -1,11 +1,11 @@
-#VBOX-DEV-INFRA
+# VBOX-DEV-INFRA
 
-####Prerequisites:
+#### Prerequisites:
 Following softwares must be up & running on the host machine as a pre-requisite:
 1. Vagrant
 2. VirtualBox
 
-####Softwares installed on Guest OS
+#### Softwares installed on Guest OS
 1. Ansible
 2. Docker
 3. pip & certain libraries
