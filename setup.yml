@@ -39,8 +39,8 @@
     state: latest
     update_cache: yes
 
-- name: Download kafka
+- name: Download & extract kafka
   unarchive:
-    src: http://mirrors.estointernet.in/apache/kafka/2.0.0/kafka_2.11-2.0.0.tgz
+    src: http://packages.confluent.io/archive/5.0/confluent-oss-5.0.0-2.11.tar.gz
     dest: /opt/
     remote_src: yes

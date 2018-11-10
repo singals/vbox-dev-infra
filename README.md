@@ -12,7 +12,7 @@ Following softwares must be up & running on the host machine as a pre-requisite:
 4. CouchBase (as a Docker container)
 5. Elastic server (as a Docker container)
 6. Java 8 (JDK)
-7. Zk-Kafka single node setup
+7. Confluent Kafka
 8. Spark server (TODO)
 
 #### Steps:
