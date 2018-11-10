@@ -14,11 +14,13 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "forwarded_port", guest: 2181, host: 2181
   config.vm.network "forwarded_port", guest: 9092, host: 9092
+  config.vm.network "forwarded_port", guest: 29092, host: 29092
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 8081, host: 8081
+  config.vm.network "forwarded_port", guest: 8082, host: 8082
+  config.vm.network "forwarded_port", guest: 8083, host: 8083
   config.vm.network "forwarded_port", guest: 8091, host: 8091
   config.vm.network "forwarded_port", guest: 9200, host: 9200
-  # Following is for 2nd & 3rd node in Kafka cluster
-  # config.vm.network "forwarded_port", guest: 9093, host: 9093
-  # config.vm.network "forwarded_port", guest: 9094, host: 9094
 
   config.vm.network "private_network", ip: "192.168.32.10"
 
