@@ -2,4 +2,5 @@
 *.log
 playbook.retry
 .vagrant/
-kafka_2.11-2.0.0/
+confluent-hub-client-latest.tar.gz
+confluent-oss-5.0.1-2.11.tar.gz

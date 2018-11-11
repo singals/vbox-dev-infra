@@ -1,29 +1,4 @@
 ---
-- name: Add Docker GPG key
-  apt_key: url=https://download.docker.com/linux/ubuntu/gpg
-
-- name: Add Docker APT repository
-  apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ansible_distribution_release}} stable
-
-- name: configure deb pkg
-  command: dpkg --configure -a
-  become: yes
-
-- name: Install list of packages
-  apt:
-    name: ['apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'docker-ce']
-    state: present
-    update_cache: yes
-
-- name: Install Pip.
-  apt: name=python-pip state=present
-  become: yes
-
-- name: Install Docker Python library.
-  pip: name=docker state=present
-  become: yes
-
 - name: Add Oracle java repository
   apt_repository: repo='ppa:webupd8team/java'
 
@@ -42,5 +17,24 @@
 - name: Download & extract kafka
   unarchive:
     src: http://packages.confluent.io/archive/5.0/confluent-oss-5.0.0-2.11.tar.gz
+#    src: confluent-oss-5.0.1-2.11.tar.gz
     dest: /opt/
     remote_src: yes
+
+- name: ensure confluent-hub directory exists
+  file:
+    path: /opt/confluent-hub
+    state: directory
+
+- name: Download & extract Confluent kafka hub
+  unarchive:
+    src: http://client.hub.confluent.io/confluent-hub-client-latest.tar.gz
+#    src: confluent-hub-client-latest.tar.gz
+    dest: /opt/confluent-hub
+    remote_src: yes
+
+- name: add confluent-hub to path
+  lineinfile:
+    path: /home/vagrant/.bashrc
+    line: 'PATH=/opt/confluent-hub/bin:$PATH'
+    state: present
