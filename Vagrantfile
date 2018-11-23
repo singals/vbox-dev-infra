@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     # vb.gui = true
     vb.name = "infra_on_ubuntu"
-    vb.memory = "4096"
+    vb.memory = "6144"
   end
 
   config.vm.provision "ansible_local" do |ansible|
